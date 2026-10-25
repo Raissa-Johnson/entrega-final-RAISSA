@@ -1,0 +1,9 @@
+BITÁCORA DIGITAL
+
+1. Mantén index.html y styles.css en la misma carpeta.
+2. Abre index.html con doble clic para ver la página en tu navegador.
+3. Copia tus imágenes a la carpeta imagenes/ y usa los nombres de archivo indicados en el HTML.
+4. Si tus capturas tienen nombres distintos, cambia las rutas src dentro de index.html.
+5. Los enlaces de los trabajos abren tus proyectos de p5.js.
+
+Importante: el archivo de texto original no incluía los archivos de imágenes, solo sus rutas. Por eso, debes copiar las imágenes originales a la carpeta imagenes para que aparezcan en la página.

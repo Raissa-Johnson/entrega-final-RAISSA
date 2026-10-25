@@ -1,0 +1,790 @@
+/* =====================================================
+   raissa - ESTILOS GENERALES DEL SITIO WEB
+   Archivo: styles.css
+   ===================================================== */
+
+
+/* 1. CONFIGURACIÓN GENERAL */
+
+* {
+    box-sizing: border-box;
+}
+
+/* Variables de colores para modificar el diseño fácilmente */
+:root {
+    --rosa-fondo: #f6b5c2;
+    --rosa-panel: #f8cbd0;
+    --crema: #fff5e8;
+    --rojo: #c9151d;
+    --texto: #211b19;
+    --azul: #bed6e7;
+}
+
+/* Estilos generales de toda la página */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--rosa-fondo);
+    color: var(--texto);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* 2. CONTENEDOR PRINCIPAL */
+
+#pagina {
+    min-height: 100vh;
+    padding: 40px 24px;
+
+    display: flex;
+    justify-content: center;
+}
+
+#sitio {
+    width: 100%;
+    max-width: 1120px;
+
+    background-color: var(--crema);
+    border-radius: 24px;
+    padding: 24px;
+
+    overflow: hidden;
+}
+
+
+/* 3. CABECERA */
+
+#cabecera {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 22px;
+    min-height: 44px;
+    margin-bottom: 16px;
+}
+
+/* Logotipo y nombre de la marca */
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    min-width: 180px;
+
+    color: var(--texto);
+    text-decoration: none;
+}
+
+/* Imagen del logotipo */
+.logo-imagen {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+    object-fit: contain;
+}
+
+/* Nombre y subtítulo de la marca */
+.marca-texto {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.marca-nombre {
+    font-size: 20px;
+    letter-spacing: 3px;
+    line-height: 1;
+}
+
+.marca-subtitulo {
+    font-size: 7px;
+    letter-spacing: 3px;
+}
+
+
+/* 4. MENÚ DE NAVEGACIÓN */
+
+#navegacion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: clamp(12px, 2vw, 28px);
+}
+
+/* Enlaces del menú */
+.enlace-nav {
+    color: var(--texto);
+    text-decoration: none;
+
+    font-size: 12px;
+    padding: 8px 0;
+
+    border-bottom: 2px solid transparent;
+
+    transition: border-color 0.2s ease;
+}
+
+/* Línea roja al pasar el cursor o en el enlace activo */
+.enlace-nav:hover,
+.enlace-nav.activo {
+    border-bottom-color: var(--rojo);
+}
+
+
+/* 5. BOTONES DE ICONOS DE LA CABECERA */
+
+#acciones-cabecera {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.icono-boton {
+    display: grid;
+    place-items: center;
+
+    width: 22px;
+    height: 28px;
+
+    border: none;
+    padding: 2px;
+    background: transparent;
+
+    cursor: pointer;
+}
+
+/* Imágenes de los iconos */
+.icono-boton img {
+    display: block;
+
+    width: 18px;
+    height: 18px;
+
+    object-fit: contain;
+}
+
+
+/* 6. PORTADA PRINCIPAL */
+
+.portada {
+    display: grid;
+
+    /* Divide la portada en dos columnas */
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+}
+
+/* Panel rosado del título */
+.portada-texto {
+    min-height: 300px;
+    padding: 34px 30px;
+
+    background-color: var(--rosa-panel);
+    border-radius: 16px;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+/* Tipografía de los títulos principales */
+.portada-texto h1,
+.historia-texto h2,
+.titulo-seccion h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 700;
+    color: var(--rojo);
+}
+
+/* Título de la portada */
+.portada-texto h1 {
+    margin: 0 0 16px;
+
+    font-size: clamp(34px, 4.5vw, 64px);
+    letter-spacing: -2.8px;
+    line-height: 0.92;
+}
+
+/* Descripción de la portada */
+.portada-texto p {
+    margin: 0 0 20px;
+
+    font-size: clamp(14px, 1.5vw, 20px);
+    line-height: 1.35;
+}
+
+
+/* 7. BOTÓN PRINCIPAL */
+
+.boton-principal,
+.boton-secundario {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    min-height: 38px;
+    padding: 9px 18px;
+
+    border-radius: 30px;
+
+    font-size: 12px;
+    text-decoration: none;
+
+    transition: transform 0.2s ease,
+                background-color 0.2s ease;
+}
+
+.boton-principal {
+    color: white;
+    background-color: var(--rojo);
+}
+
+.boton-principal:hover {
+    transform: translateY(-2px);
+    background-color: #a70e15;
+}
+
+
+/* 8. ELEMENTOS DECORATIVOS DE LA PORTADA */
+
+.destello {
+    position: absolute;
+
+    top: 30px;
+    right: 28px;
+
+    color: var(--rojo);
+    font-size: 30px;
+}
+
+.puntos-decorativos {
+    position: absolute;
+
+    right: 18px;
+    bottom: 16px;
+
+    color: var(--rojo);
+    font-size: 15px;
+    line-height: 0.55;
+    letter-spacing: 4px;
+}
+
+
+/* 9. IMÁGENES GENERALES */
+
+.marco-imagen {
+    overflow: hidden;
+    border-radius: 15px;
+    background-color: #f0d6c9;
+}
+
+/* La imagen ocupa todo el espacio de su contenedor */
+.marco-imagen img,
+.producto-imagen > img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+/* Imagen grande de la portada */
+.portada-imagen {
+    min-height: 300px;
+}
+
+
+/* 10. SECCIÓN NEW FAVORITES */
+
+.favoritos {
+    margin-top: 24px;
+}
+
+/* Fila del título y las flechas */
+.titulo-seccion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+/* Título de la sección */
+.titulo-seccion h2 {
+    margin: 0;
+
+    font-size: clamp(25px, 3vw, 38px);
+    letter-spacing: -1px;
+}
+
+.titulo-seccion h2 span {
+    font-family: Arial, sans-serif;
+    font-size: 0.7em;
+    margin-right: 6px;
+}
+
+
+/* 11. FLECHAS DEL CARRUSEL */
+
+.controles-carrusel {
+    display: flex;
+    gap: 8px;
+}
+
+.flecha {
+    display: grid;
+    place-items: center;
+
+    width: 31px;
+    height: 31px;
+
+    border: 1px solid #a78d80;
+    border-radius: 50%;
+
+    color: var(--texto);
+    background: transparent;
+
+    font-size: 24px;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+.flecha:hover {
+    color: white;
+    background-color: var(--rojo);
+    border-color: var(--rojo);
+}
+
+
+/* 12. CUADRÍCULA DE PRODUCTOS */
+
+.productos {
+    display: grid;
+
+    /* Cuatro productos en una fila */
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 10px;
+}
+
+.producto {
+    min-width: 0;
+}
+
+/* Contenedor de cada fotografía de producto */
+.producto-imagen {
+    position: relative;
+
+    aspect-ratio: 1 / 1.08;
+    overflow: hidden;
+
+    border-radius: 13px;
+}
+
+/* Colores de fondo de las imágenes */
+.fondo-rosa {
+    background-color: #f7c5cc;
+}
+
+.fondo-azul {
+    background-color: var(--azul);
+}
+
+.fondo-crema {
+    background-color: #f5dfc9;
+}
+
+
+/* 13. BOTÓN DE FAVORITOS DE CADA PRODUCTO */
+
+.favorito-boton {
+    position: absolute;
+
+    top: 8px;
+    right: 8px;
+
+    border: none;
+    padding: 0;
+
+    color: #7d2828;
+    background: transparent;
+
+    font-size: 23px;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+
+/* 14. NOMBRE Y PRECIO DE LOS PRODUCTOS */
+
+.producto-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 8px;
+    padding: 9px 2px 0;
+}
+
+.producto-info h3,
+.producto-info p {
+    margin: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.producto-info p {
+    margin-top: 2px;
+    color: var(--rojo);
+}
+
+
+/* 15. BOTÓN + DE CADA PRODUCTO */
+
+.agregar-boton {
+    flex: 0 0 25px;
+
+    width: 25px;
+    height: 25px;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: var(--rojo);
+    color: white;
+
+    font-size: 20px;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+.agregar-boton:hover {
+    background-color: #9e0d14;
+}
+
+
+/* 16. LÍNEA DECORATIVA INFERIOR */
+
+.linea-progreso {
+    height: 3px;
+
+    margin: 28px 2px 26px;
+
+    background-color: #f4d9d2;
+}
+
+.linea-progreso span {
+    display: block;
+
+    width: 25%;
+    height: 100%;
+
+    background-color: var(--rojo);
+}
+
+
+/* 17. SECCIÓN INFERIOR */
+
+.historia {
+    display: grid;
+
+    /* Imagen grande, texto e imagen pequeña */
+    grid-template-columns: 1.2fr 0.72fr 0.5fr;
+
+    align-items: center;
+    gap: 26px;
+
+    padding-bottom: 2px;
+}
+
+/* Fotografía grande de la parte inferior */
+.historia-imagen {
+    height: 100%;
+    min-height: 260px;
+}
+
+
+/* 18. TEXTO DE LA SECCIÓN INFERIOR */
+
+.historia-texto {
+    position: relative;
+    padding: 12px 0;
+}
+
+.historia-texto h2 {
+    margin: 0 0 18px;
+
+    font-size: clamp(29px, 3.3vw, 43px);
+    line-height: 0.98;
+    letter-spacing: -1.5px;
+}
+
+.historia-texto h2 span {
+    font-family: Arial, sans-serif;
+    font-size: 0.6em;
+    white-space: nowrap;
+}
+
+/* Descripción */
+.historia-texto p {
+    margin: 0 0 20px;
+
+    font-size: 12px;
+    line-height: 1.55;
+}
+
+
+/* 19. BOTÓN SECUNDARIO */
+
+.boton-secundario {
+    min-height: 34px;
+    padding: 7px 14px;
+
+    border: 1px solid #a94d4b;
+
+    color: #8d2425;
+    background: transparent;
+}
+
+.boton-secundario:hover {
+    transform: translateY(-2px);
+    background-color: #f8e5dc;
+}
+
+
+/* 20. IMAGEN PEQUEÑA Y DECORACIONES LATERALES */
+
+.historia-lateral {
+    align-self: stretch;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 12px;
+}
+
+.historia-lateral-imagen {
+    height: 160px;
+}
+
+/* Tres puntos decorativos */
+.puntos-slider {
+    color: var(--rojo);
+
+    font-size: 20px;
+    letter-spacing: 4px;
+
+    text-align: center;
+}
+
+/* Arco decorativo inferior */
+.arco-decorativo {
+    align-self: flex-end;
+
+    margin-right: 4px;
+
+    color: #8d2425;
+    font-family: Georgia, serif;
+    font-size: 46px;
+    line-height: 0.65;
+}
+
+
+/* =====================================================
+   21. ADAPTACIÓN PARA TABLETAS
+   Se activa cuando la pantalla tiene hasta 850 px.
+   ===================================================== */
+
+@media (max-width: 850px) {
+
+    #pagina {
+        padding: 22px 14px;
+    }
+
+    #sitio {
+        padding: 20px;
+    }
+
+    #cabecera {
+        flex-wrap: wrap;
+    }
+
+    .marca {
+        min-width: auto;
+    }
+
+    /* El menú pasa a una fila debajo de la cabecera */
+    #navegacion {
+        order: 3;
+        width: 100%;
+    }
+
+    .portada-texto,
+    .portada-imagen {
+        min-height: 260px;
+    }
+
+    /* La sección inferior usa dos columnas */
+    .historia {
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+    }
+
+    .historia-imagen {
+        min-height: 240px;
+    }
+
+    .historia-lateral {
+        grid-column: 2;
+
+        display: grid;
+        grid-template-columns: 1fr auto;
+
+        align-items: center;
+    }
+
+    .historia-lateral-imagen {
+        height: 120px;
+    }
+
+    .puntos-slider {
+        grid-column: 1;
+    }
+
+    .arco-decorativo {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+    }
+}
+
+
+/* =====================================================
+   22. ADAPTACIÓN PARA CELULARES
+   Se activa cuando la pantalla tiene hasta 560 px.
+   ===================================================== */
+
+@media (max-width: 560px) {
+
+    #pagina {
+        padding: 12px 8px;
+    }
+
+    #sitio {
+        padding: 14px;
+        border-radius: 18px;
+    }
+
+    #cabecera {
+        gap: 12px;
+    }
+
+    .marca-nombre {
+        font-size: 17px;
+    }
+
+    .marca-subtitulo {
+        font-size: 6px;
+        letter-spacing: 2px;
+    }
+
+    .logo-imagen {
+        width: 34px;
+        height: 34px;
+    }
+
+    #acciones-cabecera {
+        margin-left: auto;
+        gap: 7px;
+    }
+
+    /* Menú distribuido horizontalmente */
+    #navegacion {
+        justify-content: space-between;
+        gap: 8px;
+    }
+
+    .enlace-nav {
+        font-size: 11px;
+    }
+
+    /* La portada se convierte en una columna */
+    .portada {
+        grid-template-columns: 1fr;
+    }
+
+    .portada-texto {
+        min-height: 250px;
+        padding: 28px 24px;
+    }
+
+    .portada-imagen {
+        min-height: 230px;
+    }
+
+    /* Dos productos por fila */
+    .productos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 18px;
+    }
+
+    .titulo-seccion h2 {
+        font-size: 27px;
+    }
+
+    /* Distribución de la sección inferior */
+    .historia {
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+    }
+
+    .historia-imagen {
+        grid-column: 1 / -1;
+        min-height: 240px;
+    }
+
+    .historia-texto {
+        grid-column: 1;
+    }
+
+    .historia-lateral {
+        grid-column: 2;
+        display: flex;
+    }
+
+    .historia-lateral-imagen {
+        height: 140px;
+        width: 100%;
+    }
+
+    .historia-texto h2 {
+        font-size: 30px;
+    }
+
+    .historia-texto p {
+        font-size: 11px;
+    }
+
+    .boton-secundario {
+        font-size: 10px;
+        padding: 7px 10px;
+    }
+}
